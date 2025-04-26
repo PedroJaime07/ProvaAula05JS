@@ -21,8 +21,15 @@ if (opções == 5){
         }
     }
 } else if (opções == 2){
-    for (i = 0; i < tarefas.length; i++)
-    console.log(i + ": " + tarefas[i])
+    if (tarefas.length === 0) {
+        alert("📭 Sua lista está vazia.");
+    } else {
+        let listaFormatada = "📝 Lista de tarefas:\n\n";
+        for (let i = 0; i < tarefas.length; i++) {
+            listaFormatada += `${i} - ${tarefas[i]}\n`;
+        }
+        alert(listaFormatada);
+    }
 } else if (opções == 3) {
     while (true) {
         let removeTarefa = Number(prompt('Digite o numero da tarefa que deseja remover'))
@@ -53,7 +60,7 @@ if (opções == 5){
             alert('inválido')
         } else {
             const concluido = tarefas[concluirTarefa] = " ✅ " + tarefas[concluirTarefa] ;    
-            alert(concluido + "  (Escolha a opção 2- listar no menu principal para ver a lista no console)")
+            alert(concluido + "  (Escolha a opção 2- listar no menu principal para ver a lista)")
             break
         }
     } 
